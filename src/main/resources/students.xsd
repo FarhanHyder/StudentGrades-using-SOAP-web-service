@@ -40,6 +40,22 @@ xmlns:tns="http://hyder.com/students" elementFormDefault="qualified">
     </xs:complexType>
   </xs:element>
   
+  <xs:element name="DeleteStudentRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name= "id" type="xs:int"/>
+      </xs:sequence>  
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="DeleteStudentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name= "status" type="xs:string"/>
+      </xs:sequence>  
+    </xs:complexType>
+  </xs:element>
+  
   <xs:complexType name="Student">
     <xs:sequence>
       <xs:element name="id" type="xs:int"/>

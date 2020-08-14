@@ -71,5 +71,12 @@ public class StudentService {
 		response.setId(newStudent.getId());
 		return response;
 	}
+	
+	// this is a different approach than the create method
+	public String deleteStudent(int id) {
+		students.remove(id);
+		
+		return "success";
+	}
 
 }
