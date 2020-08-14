@@ -26,6 +26,7 @@ import javax.xml.bind.annotation.XmlType;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
  *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="Student" type="{http://hyder.com/students}Student"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,13 +37,16 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "status"
+    "status",
+    "student"
 })
-@XmlRootElement(name = "DeleteStudentResponse")
-public class DeleteStudentResponse {
+@XmlRootElement(name = "UpdateStudentResponse")
+public class UpdateStudentResponse {
 
     @XmlElement(required = true)
     protected String status;
+    @XmlElement(name = "Student", required = true)
+    protected Student student;
 
     /**
      * Gets the value of the status property.
@@ -66,6 +70,30 @@ public class DeleteStudentResponse {
      */
     public void setStatus(String value) {
         this.status = value;
+    }
+
+    /**
+     * Gets the value of the student property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link Student }
+     *     
+     */
+    public Student getStudent() {
+        return student;
+    }
+
+    /**
+     * Sets the value of the student property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link Student }
+     *     
+     */
+    public void setStudent(Student value) {
+        this.student = value;
     }
 
 }

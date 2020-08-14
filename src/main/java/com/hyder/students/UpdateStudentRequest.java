@@ -25,7 +25,9 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="status" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="id" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="gpa" type="{http://www.w3.org/2001/XMLSchema}double"/>
+ *         &lt;element name="standing" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +38,72 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "status"
+    "id",
+    "gpa",
+    "standing"
 })
-@XmlRootElement(name = "DeleteStudentResponse")
-public class DeleteStudentResponse {
+@XmlRootElement(name = "UpdateStudentRequest")
+public class UpdateStudentRequest {
 
+    protected int id;
+    protected double gpa;
     @XmlElement(required = true)
-    protected String status;
+    protected String standing;
 
     /**
-     * Gets the value of the status property.
+     * Gets the value of the id property.
+     * 
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * Sets the value of the id property.
+     * 
+     */
+    public void setId(int value) {
+        this.id = value;
+    }
+
+    /**
+     * Gets the value of the gpa property.
+     * 
+     */
+    public double getGpa() {
+        return gpa;
+    }
+
+    /**
+     * Sets the value of the gpa property.
+     * 
+     */
+    public void setGpa(double value) {
+        this.gpa = value;
+    }
+
+    /**
+     * Gets the value of the standing property.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getStatus() {
-        return status;
+    public String getStanding() {
+        return standing;
     }
 
     /**
-     * Sets the value of the status property.
+     * Sets the value of the standing property.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setStatus(String value) {
-        this.status = value;
+    public void setStanding(String value) {
+        this.standing = value;
     }
 
 }

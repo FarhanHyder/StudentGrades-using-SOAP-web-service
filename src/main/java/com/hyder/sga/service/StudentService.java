@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import com.hyder.students.CreateStudentRequest;
 import com.hyder.students.CreateStudentResponse;
 import com.hyder.students.Student;
+import com.hyder.students.UpdateStudentRequest;
+import com.hyder.students.UpdateStudentResponse;
 
 @Service
 public class StudentService {
@@ -77,6 +79,21 @@ public class StudentService {
 		students.remove(id);
 		
 		return "success";
+	}
+	
+	public UpdateStudentResponse updateStudent(UpdateStudentRequest request) {
+		UpdateStudentResponse response = new UpdateStudentResponse();
+		
+		students.replace(request.getId(),
+				new Student(request.getId(), 
+						this.getStudentById(request.getId()).getName(), 
+						request.getGpa(), 
+						request.getStanding()));
+		
+		response.setStatus("success");
+		response.setStudent(this.getStudentById(request.getId()));
+		
+		return response;
 	}
 
 }

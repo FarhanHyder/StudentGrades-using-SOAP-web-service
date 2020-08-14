@@ -13,6 +13,8 @@ import com.hyder.students.DeleteStudentRequest;
 import com.hyder.students.DeleteStudentResponse;
 import com.hyder.students.GetStudentRequest;
 import com.hyder.students.GetStudentResponse;
+import com.hyder.students.UpdateStudentRequest;
+import com.hyder.students.UpdateStudentResponse;
 
 @Endpoint
 public class StudentEndpoint {
@@ -48,6 +50,16 @@ public class StudentEndpoint {
 		DeleteStudentResponse response = new DeleteStudentResponse();
 		
 		response.setStatus(studentService.deleteStudent(request.getId()));
+		
+		return response;
+	}
+	
+	@PayloadRoot(namespace="http://hyder.com/students", localPart="UpdateStudentRequest")
+	@ResponsePayload
+	public UpdateStudentResponse processUpdateStudentRequest(@RequestPayload UpdateStudentRequest request) {
+
+		UpdateStudentResponse response = new UpdateStudentResponse();
+		response = studentService.updateStudent(request);
 		
 		return response;
 	}
