@@ -7,6 +7,8 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Service;
 
+import com.hyder.students.GetCreateStudentRequest;
+import com.hyder.students.GetCreateStudentResponse;
 import com.hyder.students.Student;
 
 @Service
@@ -49,6 +51,25 @@ public class StudentService {
 	
 	public Student getStudentById(int id) {		
 		return students.get(id);
+	}
+	
+	public GetCreateStudentResponse createStudent(GetCreateStudentRequest student) {
+		GetCreateStudentResponse response = new GetCreateStudentResponse();
+		
+		// NOTE: a shorter way to do the following is to just use the var "student"
+			// however, doing this way just to have a better readability of the code
+		Student newStudent = new Student();
+		newStudent.setId(student.getId());
+		newStudent.setName(student.getName());
+		newStudent.setGpa(student.getGpa());
+		newStudent.setStanding(student.getStanding());
+		
+		students.put(newStudent.getId(), newStudent);
+		
+		// NOTE: surely, the following can be updated when connecting to the db
+		response.setStatus("success");
+		response.setId(newStudent.getId());
+		return response;
 	}
 
 }

@@ -11,16 +11,17 @@ package com.hyder.students;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for Student complex type.
+ * <p>Java class for anonymous complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="Student">
+ * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -37,13 +38,14 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "Student", propOrder = {
+@XmlType(name = "", propOrder = {
     "id",
     "name",
     "gpa",
     "standing"
 })
-public class Student {
+@XmlRootElement(name = "GetCreateStudentRequest")
+public class GetCreateStudentRequest {
 
     protected int id;
     @XmlElement(required = true)
