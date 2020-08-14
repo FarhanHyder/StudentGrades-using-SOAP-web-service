@@ -7,8 +7,8 @@ import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Service;
 
-import com.hyder.students.GetCreateStudentRequest;
-import com.hyder.students.GetCreateStudentResponse;
+import com.hyder.students.CreateStudentRequest;
+import com.hyder.students.CreateStudentResponse;
 import com.hyder.students.Student;
 
 @Service
@@ -53,8 +53,8 @@ public class StudentService {
 		return students.get(id);
 	}
 	
-	public GetCreateStudentResponse createStudent(GetCreateStudentRequest student) {
-		GetCreateStudentResponse response = new GetCreateStudentResponse();
+	public CreateStudentResponse createStudent(CreateStudentRequest student) {
+		CreateStudentResponse response = new CreateStudentResponse();
 		
 		// NOTE: a shorter way to do the following is to just use the var "student"
 			// however, doing this way just to have a better readability of the code

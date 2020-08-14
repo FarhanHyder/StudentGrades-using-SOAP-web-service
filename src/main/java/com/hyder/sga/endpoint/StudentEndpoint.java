@@ -7,10 +7,10 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import com.hyder.sga.service.StudentService;
+import com.hyder.students.CreateStudentRequest;
+import com.hyder.students.CreateStudentResponse;
 import com.hyder.students.DeleteStudentRequest;
 import com.hyder.students.DeleteStudentResponse;
-import com.hyder.students.GetCreateStudentRequest;
-import com.hyder.students.GetCreateStudentResponse;
 import com.hyder.students.GetStudentRequest;
 import com.hyder.students.GetStudentResponse;
 
@@ -30,11 +30,11 @@ public class StudentEndpoint {
 		return response;
 	}
 	
-	@PayloadRoot(namespace="http://hyder.com/students", localPart="GetCreateStudentRequest")
+	@PayloadRoot(namespace="http://hyder.com/students", localPart="CreateStudentRequest")
 	@ResponsePayload
-	public GetCreateStudentResponse processCreateStudentRequest(@RequestPayload GetCreateStudentRequest request) {
+	public CreateStudentResponse processCreateStudentRequest(@RequestPayload CreateStudentRequest request) {
 
-		GetCreateStudentResponse response = new GetCreateStudentResponse();
+		CreateStudentResponse response = new CreateStudentResponse();
 		
 		response = studentService.createStudent(request);
 		

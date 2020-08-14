@@ -20,7 +20,7 @@ xmlns:tns="http://hyder.com/students" elementFormDefault="qualified">
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="GetCreateStudentRequest">
+  <xs:element name="CreateStudentRequest">
     <xs:complexType>
       <xs:sequence>
         <xs:element name="id" type="xs:int"/>
@@ -31,7 +31,7 @@ xmlns:tns="http://hyder.com/students" elementFormDefault="qualified">
     </xs:complexType>
   </xs:element>
   
-  <xs:element name="GetCreateStudentResponse">
+  <xs:element name="CreateStudentResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element name= "status" type="xs:string"/>
