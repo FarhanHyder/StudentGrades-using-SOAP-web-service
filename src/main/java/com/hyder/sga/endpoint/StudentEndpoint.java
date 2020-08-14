@@ -7,6 +7,8 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import com.hyder.sga.service.StudentService;
+import com.hyder.students.GetCreateStudentRequest;
+import com.hyder.students.GetCreateStudentResponse;
 import com.hyder.students.GetStudentRequest;
 import com.hyder.students.GetStudentResponse;
 
@@ -22,6 +24,17 @@ public class StudentEndpoint {
 
 		GetStudentResponse response = new GetStudentResponse();
 		response.setStudent(studentService.getStudentById(request.getId()));
+		
+		return response;
+	}
+	
+	@PayloadRoot(namespace="http://hyder.com/students", localPart="GetCreateStudentRequest")
+	@ResponsePayload
+	public GetCreateStudentResponse processCreateStudentRequest(@RequestPayload GetCreateStudentRequest request) {
+
+		GetCreateStudentResponse response = new GetCreateStudentResponse();
+		
+		response = studentService.createStudent(request);
 		
 		return response;
 	}
