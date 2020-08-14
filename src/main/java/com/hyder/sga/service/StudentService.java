@@ -47,5 +47,9 @@ public class StudentService {
 		students.put(simon.getId(), simon);
 		
 	}
+	
+	public Student getStudentById(int id) {
+		return students.get(id);
+	}
 
 }
