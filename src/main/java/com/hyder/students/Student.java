@@ -131,5 +131,11 @@ public class Student {
     public void setStanding(String value) {
         this.standing = value;
     }
+    
+    @Override
+    public String toString() {
+      return String.format("Student [id=%s, name=%s, gpa=%f, standing=%s]", id, name, gpa, standing);
+    }
+
 
 }

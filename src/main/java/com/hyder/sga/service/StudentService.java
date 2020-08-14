@@ -15,7 +15,7 @@ public class StudentService {
 	private static final Map<Integer, Student> students = new HashMap<>();
 	
 	@PostConstruct
-	public void init() {
+	public void initialize() {
 		
 		Student mario = new Student();
 		mario.setId(1);
@@ -24,31 +24,30 @@ public class StudentService {
 		mario.setStanding("junior");
 		
 		Student puzo = new Student();
-		mario.setId(2);
-		mario.setName("Puzo");
-		mario.setGpa(3.3);
-		mario.setStanding("freshman");
+		puzo.setId(2);
+		puzo.setName("Puzo");
+		puzo.setGpa(3.3);
+		puzo.setStanding("freshman");
 		
 		Student ryan = new Student();
-		mario.setId(3);
-		mario.setName("Ryan");
-		mario.setGpa(3.1);
-		mario.setStanding("sophomore");
+		ryan.setId(3);
+		ryan.setName("Ryan");
+		ryan.setGpa(3.1);
+		ryan.setStanding("sophomore");
 		
 		Student simon = new Student();
-		mario.setId(4);
-		mario.setName("Simon");
-		mario.setGpa(3.9);
-		mario.setStanding("senior");
+		simon.setId(4);
+		simon.setName("Simon");
+		simon.setGpa(3.9);
+		simon.setStanding("senior");
 		
 		students.put(mario.getId(), mario);
 		students.put(puzo.getId(), puzo);
 		students.put(ryan.getId(), ryan);
 		students.put(simon.getId(), simon);
-		
 	}
 	
-	public Student getStudentById(int id) {
+	public Student getStudentById(int id) {		
 		return students.get(id);
 	}
 
